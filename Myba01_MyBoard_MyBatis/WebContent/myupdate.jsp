@@ -21,7 +21,7 @@
 		MyBoardVo vo = dao.selectOne(myno);
 	%>
 	
-	<form action="myupdate_res.jsp" method = "get">
+	<form action="myupdate_res.jsp" method = "post">
 	<input type = "hidden" name = "myno" value = "<%=myno%>">
 	<table>
 		<tr>

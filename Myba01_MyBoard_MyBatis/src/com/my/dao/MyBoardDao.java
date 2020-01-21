@@ -64,7 +64,7 @@ public class MyBoardDao extends SqlMapConfig {
 
 		SqlSession session = null;
 		int res = 0;
-		System.out.println("update¿« vo: " + vo);
+		
 		try {
 			session = getSqlSessionFactory().openSession(true);
 			res = session.update(namespace + "myupdate", vo);

@@ -4,6 +4,7 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+
 	<!-- db접속 정보 파일 -->
 	 <properties resource="com/my/db/db.properties"/>
 	 <typeAliases>
