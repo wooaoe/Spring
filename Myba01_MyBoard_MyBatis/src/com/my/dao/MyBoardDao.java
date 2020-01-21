@@ -20,7 +20,7 @@ public class MyBoardDao extends SqlMapConfig {
 		session = getSqlSessionFactory().openSession(true);
 		// openSession(true) : true --> autoCommit; false --> not autoCommit
 		res = session.selectList(namespace + "selectAll"); // --> com.my.myboard.selectAll
-		
+
 		session.close();
 
 		return res;
@@ -35,7 +35,62 @@ public class MyBoardDao extends SqlMapConfig {
 		res = session.selectOne(namespace + "selectOne", myno);
 
 		session.close();
-		
+
+		return res;
+
+	}
+
+	public int insert(MyBoardVo vo) {
+
+		SqlSession session = null;
+		int res = 0;
+
+		try {
+			session = getSqlSessionFactory().openSession(true);
+			res = session.insert(namespace + "myinsert", vo);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+			session.close();
+		}
+
+		return res;
+
+	}
+
+	public int update(MyBoardVo vo) {
+
+		SqlSession session = null;
+		int res = 0;
+		System.out.println("update¿« vo: " + vo);
+		try {
+			session = getSqlSessionFactory().openSession(true);
+			res = session.update(namespace + "myupdate", vo);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+
+		return res;
+	}
+
+	public int delete(int myno) {
+
+		SqlSession session = null;
+		int res = 0;
+
+		try {
+			session = getSqlSessionFactory().openSession(true);
+			res = session.update(namespace + "mydelete", myno);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+
 		return res;
 
 	}

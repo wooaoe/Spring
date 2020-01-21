@@ -27,6 +27,23 @@
 			WHERE MYNO = #{myno} <!-- ?와 동일 #{} -->
 			
 		</select>
+		<insert id="myinsert" parameterType="MyBoardVo">
 		
+			INSERT INTO MYBOARD VALUES(MYSEQ.NEXTVAL, #{myname}, #{mytitle}, #{mycontent}, SYSDATE)
+		
+		</insert>
+		<update id="myupdate" parameterType="MyBoardVo">
+		
+			UPDATE MYBOARD
+			SET MYNAME = #{myname}, MYTITLE = #{mytitle}, MYCONTENT = #{mycontent}
+			WHERE MYNO = #{myno}
+		
+		</update>
+		<delete id="mydelete" parameterType="int">
+			
+			DELETE FROM MYBOARD
+			WHERE MYNO = #{myno}
+		
+		</delete>
 		
 	</mapper>

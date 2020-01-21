@@ -22,6 +22,21 @@ public class MyBoardVo {
 		this.mycontent = mycontent;
 		this.mydate = mydate;
 	}
+	
+	public MyBoardVo(String myname, String mytitle, String mycontent) {
+		this.myname = myname;
+		this.mytitle = mytitle;
+		this.mycontent = mycontent;
+	}
+	
+
+	public MyBoardVo(String myname, String mytitle, String mycontent, int myno) {
+		super();
+		this.myname = myname;
+		this.mytitle = mytitle;
+		this.mycontent = mycontent;
+		this.myno = myno;
+	}
 
 	public int getMyno() {
 		return myno;

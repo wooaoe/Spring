@@ -45,8 +45,8 @@
 				<td><a href = "selectOne.jsp?myno=<%=list.get(i).getMyno()%>"><%=list.get(i).getMytitle()%></a></td>
 				<td><%=list.get(i).getMycontent()%></td>
 				<td><%=list.get(i).getMydate()%></td>
-				<td>수정</td>
-				<td>삭제</td>
+				<td><a href = "myupdate.jsp?myno=<%=list.get(i).getMyno()%>">수정</a></td>
+				<td><a href = "mydelete.jsp?myno=<%=list.get(i).getMyno()%>">삭제</a></td>
 			</tr>
 		<%
 			}
