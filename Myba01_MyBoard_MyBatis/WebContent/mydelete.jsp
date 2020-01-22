@@ -19,7 +19,6 @@
 	<%
 		int myno = Integer.parseInt(request.getParameter("myno"));
 		MyBoardDao dao = new MyBoardDao();
-		MyBoardVo vo = dao.selectOne(myno);
 		
 		int res = dao.delete(myno);
 		
