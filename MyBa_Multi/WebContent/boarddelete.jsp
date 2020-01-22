@@ -22,6 +22,7 @@
 	
 	if(res > 0){
 %>
+
 	<script type="text/javascript">
 		alert("삭제 성공!");
 		location.href = "boardlist.jsp";
