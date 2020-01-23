@@ -1,6 +1,8 @@
 package com.multi.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -69,7 +71,7 @@ public class MdboardDao extends SqlMapConfig {
 
 		try {
 			session = getSqlSessionFactory().openSession(true);
-			res = session.insert(namespace + "update", vo);
+			res = session.update(namespace + "update", vo);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -86,7 +88,7 @@ public class MdboardDao extends SqlMapConfig {
 
 		try {
 			session = getSqlSessionFactory().openSession(true);
-			res = session.insert(namespace + "delete", seq);
+			res = session.delete(namespace + "delete", seq);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -94,6 +96,31 @@ public class MdboardDao extends SqlMapConfig {
 		}
 
 		return res;
+	}
+	
+	public int multiDelete(String[] seq) {
+		
+		int count = 0;
+		Map<String, String[]> map = new HashMap<>(); 
+		map.put("seq", seq);
+		
+		SqlSession session = null;
+		
+		try {
+		session = getSqlSessionFactory().openSession(false);
+		count = session.delete(namespace + "muldel", map);
+		
+			if(count == seq.length) {
+				session.commit();
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		
+		return count;
 	}
 
 }
