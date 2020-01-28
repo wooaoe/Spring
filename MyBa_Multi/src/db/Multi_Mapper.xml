@@ -14,7 +14,9 @@
 	</resultMap>
 
 	<select id="selectAll" resultType="MdboardVo">
+	
 		SELECT * FROM MDBOARD
+		
 	</select>
 	<select id="selectOne" parameterType="int" resultType="MdboardVo">
 
@@ -30,7 +32,12 @@
 	<update id="update" parameterType="MdboardVo">
 	
 		UPDATE MDBOARD SET TITLE = #{title}, CONTENT = #{content} 
-		WHERE SEQ = #{seq} 
+		<!-- WHERE SEQ = #{seq} --> 
+		<where>
+			<if test="seq != null">
+				SEQ = #{seq}
+			</if>
+		</where>
 	
 	</update>
 	<delete id="delete" parameterType="int">
@@ -39,6 +46,16 @@
 		WHERE SEQ = #{seq}
 	
 	</delete>
+	<delete id="muldel" parameterType="map">
+	
+		DELETE FROM MDBOARD
+		WHERE SEQ IN
+		<foreach collection="seq" item = "seq" open = "(" separator = "," close = ")">
+			#{seq}
+		</foreach>
+	
+	</delete>
 
-
+		
+		
 </mapper>

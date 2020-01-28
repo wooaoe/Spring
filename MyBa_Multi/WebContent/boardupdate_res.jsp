@@ -25,17 +25,20 @@
 	
 	int res = dao.update(vo);
 	if(res > 0){
-	
 %>
+
 	<script type="text/javascript">
 		alert("수정 완료!");
 		location.href = "boardlist.jsp";
 	</script>
+	
 <% }else { %>
+
 	<script type="text/javascript">
 		alert("수정 실패!");
 		location.href = "boardDetail.jsp";
 	</script>
+	
 <% } %>
 
 

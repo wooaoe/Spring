@@ -16,6 +16,19 @@
 <title>BoardList</title>
 
 <script type="text/javascript" src = "https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	function allChk(bool){
+		var chks = document.getElementsByName("chk");
+		for(var i = 0; i < chks.length; i++){
+			chks[i].checked = bool;
+		}
+		
+	}
+
+
+</script>
+
+
 
 </head>
 <body>
@@ -26,7 +39,7 @@
 %>
 	
 	<h1>글 목록</h1>
-	<form action="muldel.jsp" method = "post" id = "mul">
+	<form action="muldel.jsp" method = "post" id = "muldelform">
 		<table border = "1">
 			<col width = "30px">
 			<col width = "50px">
@@ -43,7 +56,6 @@
 			</tr>
 <%
 			if(list.size() == 0){
-
 %>
 			<tr>
 				<td colspan = "5">-----글이 존재하지 않습니다.-----</td>
@@ -66,6 +78,7 @@
 		<tr>
 			<td colspan = "5">
 			<input type = "button" value = "글쓰기" onclick = "location.href = 'boardwrite.jsp'">
+			<input type = "submit" value = "삭제">
 			</td>
 		
 		</tr>

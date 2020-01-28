@@ -7,7 +7,7 @@
 	<properties resource="db/db.properties"></properties>
 
 	<typeAliases>
-		<typeAlias type="com.multi.vo.MdboardVo" alias="MdboardVo" />
+		<typeAlias type="com.multi.vo.MdboardVo" alias="MdboardVo" /> <!-- alias는 별칭같은 거 -->
 	</typeAliases>
 
 	<environments default="development">
