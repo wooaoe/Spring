@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id = "myAddr01" class = "com.test02.Address"></bean>
+	<!-- myaddr02 데이터 넣어서 -->
+	<bean id = "myaddr02" class = "com.test02.Address">
+		<constructor-arg value = "홍길동"></constructor-arg>
+		<constructor-arg value = "경기도 광명시"></constructor-arg>
+		<constructor-arg value = "010-2243-3422"></constructor-arg>
+	</bean>
+	
+	<!-- myaddr03 -->
+	<bean id = "myaddr03" class = "com.test02.Address">
+		<constructor-arg index = "2" value = "010-5555-6666"></constructor-arg>
+		<constructor-arg index = "1" value = "충북 제천시"></constructor-arg>
+		<constructor-arg index = "0" value = "이순신" ></constructor-arg>
+	</bean>
+	
+	<bean id = "lee" class = "com.test02.JobAddress">
+		<constructor-arg ref = "myaddr02"></constructor-arg>
+		<constructor-arg value = "강도"></constructor-arg>
+	</bean>
+	
+	<!-- lee2, class - JobAddress -->
+	<bean id = "lee2" class = "com.test02.JobAddress">
+		<constructor-arg ref = "myaddr03"></constructor-arg>
+		<constructor-arg value = "장군"></constructor-arg>
+	</bean>
+	
+</beans>
