@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 짝꿍의 이름과 생일을 가지고 객체 2개 생성 -->
+	<!-- 1. 생성자, 2. setter로 데이터 주입 -->
+	
+	<bean id = "friendBirth" class = "com.test02.BirthVo">
+		<constructor-arg value = "박대니"></constructor-arg>
+		<constructor-arg value = "930208"></constructor-arg>
+	</bean>
+	
+	<bean id = "lee" class = "com.test02.BirthVo">
+		<property name="name" value = "이순신"></property>	
+		<property name="birth" value = "2019-08-08"></property>
+	</bean>
+	
+</beans>
