@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id = "now" class = "java.util.Date"></bean>
+	<!-- bean 자체에서 생성가능  -->
+	
+	<bean id = "myDate" class = "java.util.Date">
+		<constructor-arg value = "120"></constructor-arg>
+		<constructor-arg value = "11"></constructor-arg>
+		<constructor-arg value = "24"></constructor-arg>
+	</bean>
+	
+	<bean id = "myvo" class = "com.test03.UserVo">
+		<constructor-arg value = "홍길동"></constructor-arg>
+		<property name="per" value = "a=1, b=2, c=5"></property>
+		<property name="myDate" ref = "myDate"></property>
+	</bean>
+	
+	<bean id = "user" class = "com.test03.UserServiceImpl"></bean>
+	
+	
+</beans>
