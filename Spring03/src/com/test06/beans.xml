@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id = "samsung" class = "com.test06.SamsungTV"/>
+	<bean id = "Lg" class = "com.test06.LgTV" lazy-init = "true"/>
+	<!-- lazy-init : bean을 가져오려고 객체를 생성했을 때 동작되는 것 (default값은 false) / 요청할 때 객체 생성됨.-->
+	
+
+
+</beans>
