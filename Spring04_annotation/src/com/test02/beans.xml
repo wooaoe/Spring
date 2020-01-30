@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<context:annotation-config></context:annotation-config>
+	<!-- annotation 쓸 때 불러오는 함수 -->
+
+	<bean id = "mystu1" class = "com.test02.Student">
+		<property name="name" value = "홍길동"></property>
+		<property name="age" value = "43"></property>
+		<property name="addr" value = "서울"></property>
+	</bean>
+	
+	<bean id = "mystu2" class = "com.test02.Student">
+		<constructor-arg value = "이순신"></constructor-arg>
+		<constructor-arg value = "54"></constructor-arg>
+		<constructor-arg value = "평양"></constructor-arg>
+	</bean>
+
+	<bean id = "myschool" class = "com.test02.School">
+		<property name="grade" value = "1" ></property>
+	</bean>
+
+
+</beans>
