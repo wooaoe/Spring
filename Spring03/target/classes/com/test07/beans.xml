@@ -44,6 +44,23 @@
 				</entry>
 			</map>
 		</property>
+		<property name="score">
+			<list>
+				<bean id = "lee" class = "com.test07.Score">
+					<constructor-arg value = "홍길동"/>
+					<constructor-arg value = "90"/>
+					<constructor-arg value = "95"/>
+					<constructor-arg value = "84"/>
+				</bean>
+				<ref bean = "hong"/>
+			</list>
+		</property>
+	</bean>
+	<bean id = "hong" class = "com.test07.Score">
+		<constructor-arg value = "이순신"/>
+		<constructor-arg value = "68"/>
+		<constructor-arg value = "72"/>
+		<constructor-arg value = "45"/>
 	</bean>
 	
 	

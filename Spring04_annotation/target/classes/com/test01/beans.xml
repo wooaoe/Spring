@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+
+	<!-- 1. nickName 생성 -->
+	<!-- 2. nickNamePrn 생성 -->
+	<!-- 3. MTest에서 출력 -->
+	<bean id = "nickName" class = "com.test01.NickName">
+	</bean>
+	<bean id = "nickPrn" class = "com.test01.NickNamePrn">
+		<property name="nickName" ref = "nickName"></property>
+	</bean>
+
+</beans>
