@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id = "womyn" class = "com.test02.Womyn"></bean>
+	<bean id = "womyn2" class = "com.test02.Womyn2"></bean>
+	<bean id = "myAdvice" class = "com.test02.MyAspect"></bean>
+	<bean class = "org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"></bean>
+	
+	<!-- 어드바이저 생성 -->
+	<bean id = "myAdvisor" class = "org.springframework.aop.aspectj.AspectJExpressionPointcutAdvisor">
+		<property name="advice" ref = "myAdvice"></property>
+		<property name="expression" value = "execution(public * com.test02.Womyn.classWork(..))"></property> <!-- 어떤 method라도 public이기만 하면 실행 -->
+	</bean>
+	
+	
+</beans>
