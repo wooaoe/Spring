@@ -6,7 +6,7 @@ import com.hello.mvc02.vo.CustomerVo;
 
 public interface CustomerDao {
 	
-	String namespace = "customer";
+	String namespace = "customer.";
 	
 	public List<CustomerVo> selectList();
 	
