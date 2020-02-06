@@ -1,0 +1,9 @@
+순서 
+1. pom.xml 
+2. web.xml 
+3. test.sql 
+4. vo, dao, biz, controller 
+5. mapper.xml 
+6. db.properties 
+7. config.xml 
+8. applicationContext, servlet-context 
