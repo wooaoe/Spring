@@ -26,6 +26,9 @@ public class LoginInterceptor implements HandlerInterceptor {
 			response.sendRedirect("loginform.do");
 			return false;
 		}
+		if(request.getSession().getAttribute("login") != null) {
+			return true;
+		}
 
 		return false;
 	}
